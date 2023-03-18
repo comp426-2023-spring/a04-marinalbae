@@ -21,24 +21,24 @@ app.get('/app/rpsls', (req, res) => {
 });
 
 app.get('/app/rps/play', (req, res) => {
-	res.status(200).send(JSON.stringify(rps(req.query.move)));
+	res.status(200).send(JSON.stringify(rps(req.query.shot)));
 });
 app.get('/app/rpsls/play', (req, res) => {
-	res.status(200).send(JSON.stringify(rpsls(req.query.move)));
+	res.status(200).send(JSON.stringify(rpsls(req.query.shot)));
 });
 
 app.post('/app/rps/play', (req, res) => {
-	res.status(200).send(JSON.stringify(rps(req.body.move)));
+	res.status(200).send(JSON.stringify(rps(req.body.shot)));
 });
 app.post('/app/rpsls/play', (req, res) => {
-	res.status(200).send(JSON.stringify(rpsls(req.body.move)));
+	res.status(200).send(JSON.stringify(rpsls(req.body.shot)));
 });
 
-app.get('/app/rps/play/:move', (req, res) => {
-	res.status(200).send(JSON.stringify(rps(req.params.move)));
+app.get('/app/rps/play/:shot', (req, res) => {
+	res.status(200).send(JSON.stringify(rps(req.params.shot)));
 });
-app.get('/app/rpsls/play/:move', (req, res) => {
-	res.status(200).send(JSON.stringify(rps(req.params.move)));
+app.get('/app/rpsls/play/:shot', (req, res) => {
+	res.status(200).send(JSON.stringify(rps(req.params.shot)));
 });
 
 app.get('*', (req, res) => {
