@@ -14,35 +14,37 @@ app.get('/app', (req, res) => {
 	res.status(200).send('200 OK');
 });
 app.get('/app/rps', (req, res) => {
-	res.status(200).send(rps());
+	res.status(200).send(JSON.stringify(rps()));
 });
 app.get('/app/rpsls', (req, res) => {
-	res.status(200).send(rpsls());
+	res.status(200).send(JSON.stringify(rpsls()));
 });
 
 app.get('/app/rps/play', (req, res) => {
-	res.status(200).send(rps(req.query.move));
+	res.status(200).send(JSON.stringify(rps(req.query.move)));
 });
 app.get('/app/rpsls/play', (req, res) => {
-	res.status(200).send(rpsls(req.query.move));
+	res.status(200).send(JSON.stringify(rpsls(req.query.move)));
 });
 
 app.post('/app/rps/play', (req, res) => {
-	res.status(200).send(rps(req.body.move));
+	res.status(200).send(JSON.stringify(rps(req.body.move)));
 });
 app.post('/app/rpsls/play', (req, res) => {
-	res.status(200).send(rpsls(req.body.move));
+	res.status(200).send(JSON.stringify(rpsls(req.body.move)));
 });
 
 app.get('/app/rps/play/:move', (req, res) => {
-	res.status(200).send(rps(req.params.move));
+	res.status(200).send(JSON.stringify(rps(req.params.move)));
 });
 app.get('/app/rpsls/play/:move', (req, res) => {
-	res.status(200).send(rps(req.params.move));
+	res.status(200).send(JSON.stringify(rps(req.params.move)));
 });
 
 app.get('*', (req, res) => {
 	res.status(404).send('404 NOT FOUND');
 });
 
-app.listen(port);
+app.listen(port, () => {
+	console.log('Server listening on port ' + port);
+});
