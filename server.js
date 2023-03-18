@@ -21,24 +21,24 @@ app.get('/app/rpsls', (req, res) => {
 });
 
 app.get('/app/rps/play', (req, res) => {
-	res.status(200).send(rps(req.query.shot));
+	res.status(200).send(rps(req.query.move));
 });
 app.get('/app/rpsls/play', (req, res) => {
-	res.status(200).send(rpsls(req.query.shot));
+	res.status(200).send(rpsls(req.query.move));
 });
 
 app.post('/app/rps/play', (req, res) => {
-	res.status(200).send(rps(req.body.shot));
+	res.status(200).send(rps(req.body.move));
 });
 app.post('/app/rpsls/play', (req, res) => {
-	res.status(200).send(rpsls(req.body.shot));
+	res.status(200).send(rpsls(req.body.move));
 });
 
-app.get('/app/rps/play/:shot', (req, res) => {
-	res.status(200).send(rps(req.params.shot));
+app.get('/app/rps/play/:move', (req, res) => {
+	res.status(200).send(rps(req.params.move));
 });
-app.get('/app/rpsls/play/:shot', (req, res) => {
-	res.status(200).send(rps(req.params.shot));
+app.get('/app/rpsls/play/:move', (req, res) => {
+	res.status(200).send(rps(req.params.move));
 });
 
 app.get('*', (req, res) => {
